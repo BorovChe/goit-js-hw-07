@@ -26,11 +26,11 @@ function openModalImg(even) {
   const instance = basicLightbox.create(`
     <img src="${originalImg}" width="800" height="600">
 `);
-  instance.show();
-  document.addEventListener("keydown", function (e) {
+  instance.show(document.addEventListener("keydown", closeModalImg));
+
+function closeModalImg(e) {
     if (e.key === "Escape") {
-      instance.close();
-      return;
-    }
-  });
-}
+      instance.close(document.removeEventListener("keydown", closeModalImg));
+    };
+  };
+};

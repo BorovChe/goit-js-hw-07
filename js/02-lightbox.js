@@ -12,7 +12,7 @@ const newListImg = galleryItems.map((img) => {
 
 const galleryListEl = document.querySelector(".gallery");
 const newListImgLine = newListImg.join("");
-galleryListEl.insertAdjacentHTML("beforeend", newListImgLine);
+galleryListEl.insertAdjacentHTML("afterbegin", newListImgLine);
 
 galleryListEl.addEventListener("click", openModalImg);
 
